@@ -1,0 +1,34 @@
+### Normal Case
+GET http://localhost:8081/order/order_1
+
+<> 2023-10-29T150939.200.json
+
+### Closed Projections
+GET http://localhost:8081/projection/order/detail/order_1
+
+<> 2023-10-29T151011.200.json
+
+### Open Projections
+GET http://localhost:8081/projection/item/detail/order_1
+
+<> 2023-10-29T151035.200.json
+
+### DTO Projections
+GET http://localhost:8081/projection/succeed/orders
+
+<> 2023-10-29T151057.200.json
+
+### Dynamic Projections
+GET http://localhost:8081/projection/orders/dynamic/order_1?tidy=true
+
+<> 2023-10-29T151415.200.json
+
+### ResultMapping - DTO
+GET http://localhost:8081/projection/order/total/record
+
+<> 2023-10-29T151149.200.json
+
+### ResultMapping - Interface
+GET http://localhost:8081/projection/order/total/interface
+
+<> 2023-10-29T151210.500.json

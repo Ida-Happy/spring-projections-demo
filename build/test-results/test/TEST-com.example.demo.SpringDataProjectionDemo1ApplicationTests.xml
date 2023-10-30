@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.demo.SpringDataProjectionDemo1ApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-10-15T09:25:17" hostname="CN-C02H40CNQ05R" time="0.436">
+  <properties/>
+  <testcase name="contextLoads()" classname="com.example.demo.SpringDataProjectionDemo1ApplicationTests" time="0.436"/>
+  <system-out><![CDATA[17:25:16.248 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.demo.SpringDataProjectionDemo1ApplicationTests]: SpringDataProjectionDemo1ApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:25:16.292 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.demo.SpringDataProjectionDemo1Application for test class com.example.demo.SpringDataProjectionDemo1ApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.4)
+
+2023-10-15T17:25:16.468+08:00  INFO 38187 --- [    Test worker] pringDataProjectionDemo1ApplicationTests : Starting SpringDataProjectionDemo1ApplicationTests using Java 17.0.6 with PID 38187 (started by hang.yuan in /Users/hang.yuan/Documents/development/spring projection demo/demos/spring-data-projection-demo1)
+2023-10-15T17:25:16.469+08:00  INFO 38187 --- [    Test worker] pringDataProjectionDemo1ApplicationTests : No active profile set, falling back to 1 default profile: "default"
+2023-10-15T17:25:16.846+08:00  INFO 38187 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-10-15T17:25:16.872+08:00  INFO 38187 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 1 JDBC repository interfaces.
+2023-10-15T17:25:17.078+08:00  INFO 38187 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-15T17:25:17.268+08:00  INFO 38187 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@15986dd5
+2023-10-15T17:25:17.269+08:00  INFO 38187 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-15T17:25:17.726+08:00  INFO 38187 --- [    Test worker] pringDataProjectionDemo1ApplicationTests : Started SpringDataProjectionDemo1ApplicationTests in 1.374 seconds (process running for 1.851)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
