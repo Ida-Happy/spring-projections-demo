@@ -1,12 +1,11 @@
 package com.example.demo;
 
-import com.example.demo.domain.DemoItem;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.event.EventListener;
-import org.springframework.core.convert.support.DefaultConversionService;
-import org.springframework.data.relational.core.mapping.event.BeforeSaveEvent;
+import org.springframework.data.projection.SpelAwareProxyProjectionFactory;
+import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 public class SpringProjectionsDemoApplication {
@@ -15,19 +14,15 @@ public class SpringProjectionsDemoApplication {
 		SpringApplication.run(SpringProjectionsDemoApplication.class, args);
 	}
 
+
 	@Bean
-	public DefaultConversionService conversionService() {
-		return new DefaultConversionService();
+	public RestTemplate restTemplate(RestTemplateBuilder restTemplateBuilder) {
+		return restTemplateBuilder.build();
 	}
 
-	@EventListener
-	public void handleBeforeSaveEvent(BeforeSaveEvent<?> event) {
-		Class<?> entityClass = event.getEntity().getClass();
-		if (entityClass.equals(DemoItem.class)) {
-			DemoItem orderItem = (DemoItem) event.getEntity();
-			if (orderItem.getId() == null) {
-				orderItem.setId(4);
-			}
-		}
+	@Bean
+	public SpelAwareProxyProjectionFactory projectionFactory() {
+		return new SpelAwareProxyProjectionFactory();
 	}
+
 }

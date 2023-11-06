@@ -1,9 +1,11 @@
 package com.example.demo.controller;
 
+import com.example.demo.client.OrderClient;
 import com.example.demo.domain.DemoOrder;
 import com.example.demo.domain.projection.*;
 import com.example.demo.service.DemoOrderService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.projection.SpelAwareProxyProjectionFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +20,8 @@ import java.util.List;
 public class DemoOrderController {
 
     private final DemoOrderService demoOrderService;
+    private final OrderClient orderClient;
+    private final SpelAwareProxyProjectionFactory factory;
 
     // Normal
     @GetMapping("/order/{orderId}")
@@ -66,4 +70,8 @@ public class DemoOrderController {
         return ResponseEntity.ok(this.demoOrderService.getOrdersBySucceed(succeed));
     }
 
+    @GetMapping("/demo/web/layer/{orderId}")
+    public DemoOrderClosedProjection getOrderByWebLayer(@PathVariable String orderId) {
+        return factory.createProjection(DemoOrderClosedProjection.class, orderClient.getOrderByOrderId(orderId));
+    }
 }
